@@ -29,6 +29,7 @@ namespace Foo
 
             Console.WriteLine("How much do you weigh in lbs?");
             Weight = Convert.ToInt32(Console.ReadLine());
+            
 
         }
 

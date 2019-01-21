@@ -11,8 +11,6 @@ namespace Foo
 
             Foo person = new Foo();
 
-            int index = 0;
-            int selection = 0;
             do
             {
                 string menuChoice = Menu();
@@ -23,11 +21,10 @@ namespace Foo
                 {
                     case "1":
                         person.GetInfo();
-                        index++;
+                        
                         break;
                     case "2":
                         Console.WriteLine("Who would you like to view?");
-                        selection = Convert.ToInt32(Console.ReadLine());
                         person.DisplayInfo();
                         break;
                     case "0":
