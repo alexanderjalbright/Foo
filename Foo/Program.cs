@@ -8,8 +8,9 @@ namespace Foo
         {
             Console.WriteLine("Welcome to personnel tracker.\n");
             bool quit = false;
-            Foo person = new Foo();
-
+            Foo[] person = new Foo[10];
+            int index = 0;
+            int selection = 0;
             do
             {
                 string menuChoice = Menu();
@@ -19,10 +20,13 @@ namespace Foo
                 switch (menuChoice)
                 {
                     case "1":
-                        person.GetInfo();
+                        person[index].GetInfo();
+                        index++;
                         break;
                     case "2":
-                        person.DisplayInfo();
+                        Console.WriteLine("Who would you like to view?");
+                        selection = Convert.ToInt32(Console.ReadLine());
+                        person[selection].DisplayInfo();
                         break;
                     case "0":
                         Console.WriteLine("\nSee you next time!\n");

@@ -11,6 +11,7 @@ namespace Foo
         public int Age { get; set; }
         public int HeightInches { get; set; }
         public int Weight { get; set; }
+        
 
         public void GetInfo()
         {
