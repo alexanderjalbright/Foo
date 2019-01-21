@@ -14,11 +14,11 @@ namespace Foo
 
         public void GetInfo()
         {
-            Console.WriteLine("What is your first name?");
+            Console.WriteLine("\nWhat is your first name?");
             FirstName = Console.ReadLine();
 
             Console.WriteLine("What is your last name?");
-            FirstName = Console.ReadLine();
+            LastName = Console.ReadLine();
 
             Console.WriteLine("How old are you?");
             Age = Convert.ToInt32(Console.ReadLine());
@@ -28,6 +28,16 @@ namespace Foo
 
             Console.WriteLine("How much do you weigh in lbs?");
             Weight = Convert.ToInt32(Console.ReadLine());
+
+        }
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine("\nFirst Name: " + FirstName);
+            Console.WriteLine("Last Name: " + LastName);
+            Console.WriteLine("Age: " + Age);
+            Console.WriteLine("Height: " + HeightInches + " in.");
+            Console.WriteLine("Weight: " + Weight + " lbs");
 
         }
     }
