@@ -8,25 +8,27 @@ namespace Foo
         {
             Console.WriteLine("Welcome to personnel tracker.\n");
             bool quit = false;
-            Foo[] person = new Foo[10];
+
+            Foo person = new Foo();
+
             int index = 0;
             int selection = 0;
             do
             {
                 string menuChoice = Menu();
 
-                
+
 
                 switch (menuChoice)
                 {
                     case "1":
-                        person[index].GetInfo();
+                        person.GetInfo();
                         index++;
                         break;
                     case "2":
                         Console.WriteLine("Who would you like to view?");
                         selection = Convert.ToInt32(Console.ReadLine());
-                        person[selection].DisplayInfo();
+                        person.DisplayInfo();
                         break;
                     case "0":
                         Console.WriteLine("\nSee you next time!\n");
@@ -37,6 +39,7 @@ namespace Foo
                         break;
                 }
             } while (quit == false);
+
 
         }
 
@@ -52,8 +55,10 @@ namespace Foo
 
 
             string menu = Console.ReadLine();
-            
+
             return menu;
         }
+
+        
     }
 }
