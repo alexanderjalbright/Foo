@@ -6,7 +6,12 @@ namespace Foo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+        }
+
+        static void Menu()
+        {
+            Console.WriteLine("Welcome to personnel tracker.")
         }
     }
 }
