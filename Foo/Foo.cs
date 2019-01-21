@@ -6,40 +6,53 @@ namespace Foo
 {
     public class Foo
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-        public int HeightInches { get; set; }
-        public int Weight { get; set; }
+        public string[] FirstName = new string[10];
+        public string[] LastName = new string[10];
+        public int[] Age = new int[10];
+        public int[] HeightInches = new int[10];
+        public int[] Weight = new int[10];
+
+        public void InitializeArrays()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                FirstName[i] = " ";
+                LastName[i] = " ";
+                Age[i] = 0;
+                HeightInches[i] = 0;
+                Weight[i] = 0;
+            }
+        }
+        
         
 
-        public void GetInfo()
+        public void GetInfo(int index)
         {
             Console.WriteLine("\nWhat is your first name?");
-            FirstName = Console.ReadLine();
+            FirstName[index] = Console.ReadLine();
 
             Console.WriteLine("What is your last name?");
-            LastName = Console.ReadLine();
+            LastName[index] = Console.ReadLine();
 
             Console.WriteLine("How old are you?");
-            Age = Convert.ToInt32(Console.ReadLine());
+            Age[index] = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("How tall are you in inches?");
-            HeightInches = Convert.ToInt32(Console.ReadLine());
+            HeightInches[index] = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("How much do you weigh in lbs?");
-            Weight = Convert.ToInt32(Console.ReadLine());
+            Weight[index] = Convert.ToInt32(Console.ReadLine());
             
 
         }
 
-        public void DisplayInfo()
+        public void DisplayInfo(int index)
         {
-            Console.WriteLine("\nFirst Name: " + FirstName);
-            Console.WriteLine("Last Name: " + LastName);
-            Console.WriteLine("Age: " + Age);
-            Console.WriteLine("Height: " + HeightInches + " in.");
-            Console.WriteLine("Weight: " + Weight + " lbs");
+            Console.WriteLine("\nFirst Name: " + FirstName[index]);
+            Console.WriteLine("Last Name: " + LastName[index]);
+            Console.WriteLine("Age: " + Age[index]);
+            Console.WriteLine("Height: " + HeightInches[index] + " in.");
+            Console.WriteLine("Weight: " + Weight[index] + " lbs");
 
         }
     }
