@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Foo
 {
@@ -9,8 +10,7 @@ namespace Foo
             Console.WriteLine("Welcome to personnel tracker.\n");
             bool quit = false;
 
-            Foo person = new Foo();
-            person.InitializeArrays();
+            var person = new List<Bar>();
             int numPersons = 0;
             do
             {
@@ -19,13 +19,17 @@ namespace Foo
                 switch (menuChoice)
                 {
                     case "1":
-                        person.GetInfo(numPersons);
+
+                        person.Add(CreateBar());
                         numPersons++;
                         break;
                     case "2":
-                        Console.WriteLine("Who would you like to view?");
+                        Console.WriteLine("Who would you like to view? Type 0 for all.");
                         int selection = Convert.ToInt32(Console.ReadLine()) - 1;
-                        person.DisplayInfo(selection);
+                        if(selection != -1)
+                            person[selection].DisplayInfo();
+                        else
+                            DisplayAllPpl(person);
                         break;
                     case "0":
                         Console.WriteLine("\nSee you next time!\n");
@@ -56,6 +60,24 @@ namespace Foo
             return menu;
         }
 
-        
+        static Bar CreateBar()
+        {
+            var person = new Bar();
+            person.GetInfo();
+
+            return person;
+
+        }
+
+        static void DisplayAllPpl(List<Bar> person)
+        {
+            for (int i = 0; i < person.Count; i++)
+            {
+                person[i].DisplayInfo();
+            }
+        }
+
+
+
     }
 }
